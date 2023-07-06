@@ -11,3 +11,10 @@ spring:
 mybatis-plus:
     configuration:
         log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 设置mybatisplus的全局配置
+    global-config:
+        db-config:
+            # 设置实体类所对应表的统一前缀
+            table-prefix: t_
+            # 配置主键id的生成策略为自动递增
+            id-type: auto

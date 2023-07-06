@@ -29,11 +29,13 @@ public class MyBatisPlusTest {
     @Test
     public void testInsert() {
         User user = new User();
+        // user.setId(233L);
         user.setName("Pycro");
         user.setAge(23);
         user.setEmail("pycro@qq.com");
         int res = userMapper.insert(user);
         System.out.println("res = " + res);
+        System.out.println(user.getId());
 
     }
 
