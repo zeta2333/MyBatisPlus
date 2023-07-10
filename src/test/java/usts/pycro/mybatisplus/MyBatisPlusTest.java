@@ -8,7 +8,6 @@ import usts.pycro.mybatisplus.pojo.User;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Pycro
@@ -56,7 +55,7 @@ public class MyBatisPlusTest {
 
         // 通过idList批量删除记录
         // DELETE FROM user WHERE id IN ( ? , ? , ? )
-        int res = userMapper.deleteBatchIds(Arrays.asList(6L, 7L, 8L));
+        int res = userMapper.deleteBatchIds(Arrays.asList(1L, 2L, 3L));
         System.out.println("res = " + res);
     }
 
@@ -95,9 +94,9 @@ public class MyBatisPlusTest {
 
         // 查询所有数据
         // SELECT id,name,age,email FROM user
-        /* List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println); */
-        Map<String, Object> map = userMapper.selectMapById(1L);
-        System.out.println(map);
+        List<User> userList = userMapper.selectList(null);
+        userList.forEach(System.out::println);
+        // Map<String, Object> map = userMapper.selectMapById(1L);
+        // System.out.println(map);
     }
 }

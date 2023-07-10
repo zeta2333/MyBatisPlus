@@ -5,7 +5,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         # 配置连接数据库的各个信息
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8
+        url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8&allowPublicKeyRetrieval=true
         username: root
         password: 12345678
 mybatis-plus:
@@ -18,3 +18,7 @@ mybatis-plus:
             table-prefix: t_
             # 配置主键id的生成策略为自动递增
             id-type: auto
+    # 配置类型别名所对应的包
+    type-aliases-package: usts.pycro.mybatisplus.pojo
+    # 扫描通用枚举的包
+    type-enums-package: usts.pycro.mybatisplus.enums

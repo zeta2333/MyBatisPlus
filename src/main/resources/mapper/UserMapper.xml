@@ -5,9 +5,19 @@
 <!-- namespace对应接口全类名 -->
 <mapper namespace="usts.pycro.mybatisplus.mapper.UserMapper">
 
+    <sql id="user_fields">
+        uid AS id, user_name AS name, age, email, is_deleted
+    </sql>
     <select id="selectMapById" resultType="map">
-        select id, name, age, email
+        select
+        <include refid="user_fields"/>
         from user
         where id = #{id};
+    </select>
+    <select id="selectPageVo" resultType="usts.pycro.mybatisplus.pojo.User">
+        select
+        <include refid="user_fields"/>
+        from t_user
+        where is_deleted = 0 and age > #{age}
     </select>
 </mapper>
